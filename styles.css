@@ -173,12 +173,21 @@ body[data-theme="dark"] {
 }
 
 .search-box button {
-    padding: 15px 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 16px;
+    padding: 10px 14px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box button i,
+.search-box button svg {
+    font-size: 18px !important;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 .search-box #searchBtn {
@@ -879,8 +888,15 @@ body[data-theme="dark"] {
         width: 100%;
         border-radius: 12px;
         font-size: 18px;
-        padding: 12px 0;
-        margin-bottom: 0;
+        padding: 10px 0;
+        min-width: 40px;
+        min-height: 40px;
+    }
+    .search-box button i,
+    .search-box button svg {
+        font-size: 18px !important;
+        width: 18px;
+        height: 18px;
     }
     .unit-toggle {
         flex-direction: row;
