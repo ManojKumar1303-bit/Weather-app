@@ -124,13 +124,15 @@ body[data-theme="dark"] {
 
 .search-box {
     display: flex;
+    align-items: center;
     margin-bottom: 15px;
     background: #f8f9fa;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+    border-radius: 30px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+    border: none;
+    padding: 4px 8px;
+    gap: 0;
+    transition: box-shadow 0.3s;
 }
 
 [data-theme="dark"] .search-box {
@@ -138,25 +140,15 @@ body[data-theme="dark"] {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.search-box:focus-within {
-    border-color: var(--secondary-color-light);
-    box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
-}
-
-[data-theme="dark"] .search-box:focus-within {
-    border-color: var(--secondary-color-dark);
-    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.3);
-}
-
 .search-box input {
     flex: 1;
-    padding: 15px 20px;
+    padding: 14px 18px;
     border: none;
     outline: none;
     background: transparent;
     font-size: 16px;
     color: var(--text-primary-light);
-    transition: color 0.3s ease;
+    border-radius: 30px;
 }
 
 [data-theme="dark"] .search-box input {
@@ -173,59 +165,74 @@ body[data-theme="dark"] {
 }
 
 .search-box button {
-    padding: 10px 14px;
-    min-width: 40px;
-    min-height: 40px;
+    background: #f4f6f8;
+    border: 1.5px solid #e0e4ea;
+    color: #90a4ae;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    margin-left: 6px;
+    margin-right: 0;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: none;
+    position: relative;
 }
 
 .search-box button i,
 .search-box button svg {
-    font-size: 18px !important;
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    display: inline-block;
+    font-size: 22px !important;
+    width: 22px;
+    height: 22px;
+    color: #90a4ae;
+    transition: color 0.2s;
+    z-index: 1;
+}
+
+.search-box button:hover,
+.search-box button:focus {
+    background: #e3f2fd;
+    color: #2196f3;
+    border: 1.5px solid #2196f3;
+}
+
+.search-box button:hover i,
+.search-box button:hover svg,
+.search-box button:focus i,
+.search-box button:focus svg {
+    color: #2196f3;
 }
 
 .search-box #searchBtn {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    background: #ffb3b3;
+    border-radius: 0 16px 16px 0;
+    margin-left: -1px;
+    box-shadow: 2px 0 8px rgba(255, 107, 107, 0.08);
 }
 
 .search-box #searchBtn:hover {
-    background: linear-gradient(135deg, #ee5a52, #ff6b6b);
-    transform: translateY(-2px);
+    background: #ff6b6b;
+    color: #fff;
 }
 
 .search-box #locationBtn {
-    background: linear-gradient(135deg, #4ecdc4, #44a08d);
-    position: relative;
-    overflow: hidden;
+    background: #b3ecec;
+    border-radius: 0 16px 16px 0;
+    margin-left: -1px;
+    box-shadow: 2px 0 8px rgba(78, 205, 196, 0.08);
 }
 
 .search-box #locationBtn:hover {
-    background: linear-gradient(135deg, #44a08d, #4ecdc4);
-    transform: translateY(-2px);
+    background: #4ecdc4;
+    color: #fff;
 }
 
 .search-box #locationBtn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease;
-}
-
-.search-box #locationBtn:hover::before {
-    width: 100%;
-    height: 100%;
+    display: none !important;
+    content: none !important;
 }
 
 .unit-toggle {
@@ -871,37 +878,37 @@ body[data-theme="dark"] {
 
 @media (max-width: 600px) {
     .search-box {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        box-shadow: none;
-        border-radius: 18px;
-        padding: 8px 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 1px 6px rgba(44, 62, 80, 0.08);
+        border-radius: 20px;
+        padding: 6px 8px;
     }
     .search-box input {
-        border-radius: 12px;
+        border-radius: 14px;
         font-size: 16px;
         padding: 12px 14px;
         margin-bottom: 0;
+        flex: 1;
     }
-    .search-box button {
-        width: 100%;
+    .search-box #searchBtn {
+        display: none !important;
+    }
+    .search-box #locationBtn {
+        width: 44px;
+        height: 44px;
         border-radius: 12px;
         font-size: 18px;
-        padding: 10px 0;
-        min-width: 40px;
-        min-height: 40px;
+        padding: 0;
+        margin: 0;
+        flex-shrink: 0;
     }
     .search-box button i,
     .search-box button svg {
-        font-size: 18px !important;
-        width: 18px;
-        height: 18px;
-    }
-    .unit-toggle {
-        flex-direction: row;
-        gap: 8px;
-        margin-bottom: 18px;
+        font-size: 22px !important;
+        width: 22px;
+        height: 22px;
     }
     .weather-card {
         padding: 10px;
