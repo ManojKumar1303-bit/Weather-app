@@ -207,20 +207,20 @@ body[data-theme="dark"] {
 }
 
 .search-box #searchBtn {
-    background: #ffb3b3;
-    border-radius: 0 16px 16px 0;
-    margin-left: -1px;
+    background: #dd4141;
+    border-radius: 16px 16px 16px 16px;
+    margin-right: 4px;
     box-shadow: 2px 0 8px rgba(255, 107, 107, 0.08);
 }
 
 .search-box #searchBtn:hover {
-    background: #ff6b6b;
+    background: #e74a4a;
     color: #fff;
 }
 
 .search-box #locationBtn {
     background: #b3ecec;
-    border-radius: 0 16px 16px 0;
+    border-radius: 16px 16px 16px 16px;
     margin-left: -1px;
     box-shadow: 2px 0 8px rgba(78, 205, 196, 0.08);
 }
